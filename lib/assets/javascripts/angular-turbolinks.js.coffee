@@ -1,4 +1,4 @@
-angular.module('ngTurbolinks', []).run(($location, $rootScope, $http, $q, $compile)->
+angular.module('ngTurbolinks', []).run(['$location', '$rootScope', '$http', '$q', '$compile', ($location, $rootScope, $http, $q, $compile) ->
 
   loadedAssets = null
   createDocument = null
@@ -194,7 +194,7 @@ angular.module('ngTurbolinks', []).run(($location, $rootScope, $http, $q, $compi
     if url == prev_url || !triggerEvent 'page:before-change'
       event.preventDefault()
       return false
-    
+
     visit(url)
   )
-)
+])
